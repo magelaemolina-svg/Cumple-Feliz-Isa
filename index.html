@@ -22,8 +22,18 @@ button{border:2px solid var(--vio);background:transparent;color:white;border-rad
 <section class="slide"><img class="photo" src="foto7.jpg"><p>Porque al final…</p><h2>nos queda lo que mejor sabemos hacer…</h2><button onclick="next()">¿QUERÉS SABER QUÉ? →</button></section>
 <section class="slide"><h1 class="gold">¡DIVERTIRNOS!! 🤘</h1><p>Y para eso… tenemos un plan.</p><button onclick="next()">DESCUBRÍ TU REGALO 🎟</button></section>
 <section class="slide"><div class="final"><div class="kicker">11 · 12 · 2026</div><h1>🔥 LA FIESTA<br><span class="gold">DE LA X</span> 🔥</h1><h2>Y sí…<br><span class="vio">vos venís.</span> 😈</h2><p>🎟️ Tu entrada está a salvo.</p></div><button onclick="restart()">VER DE NUEVO ↺</button></section>
+<audio id="music" src="musica-instrumental.mp3" preload="auto"></audio>
 <script>
+const music=document.getElementById("music");
 const s=[...document.querySelectorAll('.slide')];let i=0;
 function show(n){s[i].classList.remove('active');i=n;s[i].classList.add('active');document.getElementById('progress').style.width=(i/(s.length-1)*100)+'%'}
-function next(){if(i<s.length-1)show(i+1)} function restart(){show(0)}
+function next(){
+ if(i<s.length-1){
+   if(i===0){music.currentTime=0;music.play().catch(()=>{});}
+   const target=i+1;
+   if(target===s.length-1){music.currentTime=25;music.play().catch(()=>{});}
+   show(target);
+ }
+}
+function restart(){music.pause();music.currentTime=0;show(0)}
 </script></body></html>
