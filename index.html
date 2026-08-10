@@ -28,9 +28,10 @@ button{border:2px solid var(--vio);background:transparent;color:white;border-rad
 <section class="slide"><img class="photo" src="foto17.jpg"></section>
 <section class="slide"><h1 class="gold">¡DIVERTIRNOS!! 🤘</h1><p>Y para eso… tenemos un plan.</p></section>
 <section class="slide"><div class="final"><div class="kicker">11 · 12 · 2026</div><h1>🔥 LA FIESTA<br><span class="gold">DE LA X</span> 🔥</h1><h2>Y sí…<br><span class="vio">vos venís.</span> 😈</h2><p>🎟️ Tu entrada está a salvo.</p></div><button onclick="restart()">VER DE NUEVO ↺</button></section>
+<audio id="music" src="musica-instrumental.mp3" preload="auto"></audio>
 <script>
-const slides=[...document.querySelectorAll('.slide')];let i=0,timers=[];
+const slides=[...document.querySelectorAll('.slide')];const music=document.getElementById('music');let i=0,timers=[];
 function show(n){slides[i].classList.remove('active');i=n;slides[i].classList.add('active');document.getElementById('progress').style.width=(i/(slides.length-1)*100)+'%'}
-function startShow(){show(1);const partyIndex=slides.length-1;const preParty=partyIndex-1;const slots=preParty-1;const step=23500/slots;for(let n=2;n<=preParty;n++){timers.push(setTimeout(()=>show(n),Math.round((n-1)*step)));}timers.push(setTimeout(()=>show(partyIndex),25000));}
-function restart(){timers.forEach(clearTimeout);timers=[];show(0)}
+function startShow(){music.currentTime=0;music.play().catch(()=>{});show(1);const partyIndex=slides.length-1;const preParty=partyIndex-1;const slots=preParty-1;const step=23500/slots;for(let n=2;n<=preParty;n++){timers.push(setTimeout(()=>show(n),Math.round((n-1)*step)));}timers.push(setTimeout(()=>show(partyIndex),25000));}
+function restart(){timers.forEach(clearTimeout);timers=[];music.pause();music.currentTime=0;show(0)}
 </script></body></html>
