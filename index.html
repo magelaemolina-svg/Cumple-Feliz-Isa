@@ -1,131 +1,60 @@
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
+<!doctype html><html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Sorpresa para Isa</title>
-<style>
-:root{--bg:#0b0a0d;--ink:#f7f2f7;--gold:#d4aa56;--vio:#c793e6}
-*{box-sizing:border-box}
-html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:Arial,sans-serif}
-.slide{position:absolute;inset:0;padding:24px 18px 34px;display:flex;flex-direction:column;justify-content:center;align-items:center;opacity:0;transform:scale(.985);pointer-events:none;transition:opacity .38s ease,transform .38s ease}
-.slide.active{opacity:1;transform:scale(1);pointer-events:auto}
-h1,h2,p{text-align:center;margin:8px 0}
-h1{font-size:clamp(38px,10vw,72px);line-height:1.02}
-h2{font-size:clamp(25px,7vw,48px);line-height:1.08}
-p{font-size:clamp(18px,5vw,27px);line-height:1.25}
-.gold{color:var(--gold)} .vio{color:var(--vio)}
+<title>Sorpresa</title><style>
+:root{--bg:#0b0a0d;--ink:#f7f2f7;--gold:#d4aa56;--vio:#9a5fc0}
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:Arial,sans-serif}
+.slide{position:absolute;inset:0;padding:26px 20px 36px;display:flex;flex-direction:column;justify-content:center;align-items:center;opacity:0;transform:translateX(20px);pointer-events:none;transition:.4s}
+.slide.active{opacity:1;transform:none;pointer-events:auto}
+h1,h2,p{text-align:center;margin:8px 0}h1{font-size:clamp(36px,10vw,70px);line-height:1}h2{font-size:clamp(25px,7vw,48px)}p{font-size:clamp(18px,5vw,27px);line-height:1.25}
+.gold{color:var(--gold)}.vio{color:#c793e6}.photo{width:min(90vw,650px);max-height:57vh;object-fit:contain;border:9px solid #eee8dc;box-shadow:0 18px 55px #0009;margin:12px 0}
+button{border:2px solid var(--vio);background:transparent;color:white;border-radius:999px;padding:15px 22px;font-size:16px;font-weight:800;margin-top:16px}
+button:disabled{opacity:.5}
 .kicker{color:var(--gold);letter-spacing:.12em;font-weight:800;font-size:13px;text-transform:uppercase;margin-bottom:10px}
-.photo{width:min(92vw,680px);height:min(66vh,650px);object-fit:contain;border:7px solid #eee8dc;box-shadow:0 18px 55px #000a;background:#111}
-button{border:2px solid #9a5fc0;background:transparent;color:#fff;border-radius:999px;padding:15px 23px;font-size:16px;font-weight:800;margin-top:20px}
-.progress{position:fixed;bottom:0;left:0;height:4px;background:var(--gold);width:0;transition:width .25s;z-index:20}
+.progress{position:fixed;bottom:0;left:0;height:4px;background:var(--gold);width:0;transition:.3s;z-index:5}
 .final{border:1px solid #3a2c43;border-radius:22px;padding:30px 22px;background:#121015;box-shadow:0 20px 60px #0008;max-width:680px}
-.flash{animation:pop .42s ease}
-@keyframes pop{0%{transform:scale(.85);opacity:0}100%{transform:scale(1);opacity:1}}
-.small{font-size:clamp(16px,4.5vw,23px);opacity:.9}
-</style>
-</head>
-<body>
+</style></head><body><div id="progress" class="progress"></div>
 
-<div id="progress" class="progress"></div>
+<section class="slide active"><div class="kicker">Una pequeña advertencia</div><h1>🔊 SUBÍ<br><span class="gold">EL VOLUMEN</span></h1><p>Después no digas que no te avisamos. 😈</p><button onclick="next()">😈 TOCÁ PARA EMPEZAR</button></section>
 
-<section class="slide active" id="start">
-  <div class="kicker">Antes de empezar…</div>
-  <h1>🔊 SUBÍ<br><span class="gold">EL VOLUMEN</span></h1>
-  <p>Después no digas que no te avisamos. 😈</p>
-  <button onclick="startShow()">😈 TOCÁ PARA EMPEZAR</button>
-</section>
+<section class="slide"><img class="photo" src="foto1.jpg"><h2>Bueno…</h2><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto8.jpg"><h2>Tenemos recuerdos que es mejor que nadie conozca…</h2><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto2.jpg"><h2 class="vio">Somos amigos porque, además, sabemos demasiado. 😈</h2><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto9.jpg"><p>Hay fotos que explican todo…</p><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto3.jpg"><h2>Y otras que conviene no explicar. 😂</h2><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto10.jpg"><p>Años de amistad…</p><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto4.jpg"><h2>malas decisiones y muy buenas historias.</h2><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto11.jpg"><h2>No juzgamos.</h2><p>Archivamos evidencia. 😇</p><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto5.jpg"><h2>Y después de tantos años…</h2><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto12.jpg"><h2>seguimos acumulando pruebas.</h2><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto6.jpg"><h2 class="gold">Así que a esta altura… tampoco vamos a parar. 😈</h2><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto13.jpg"><p>Porque al final…</p><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto7.jpg"><h2>lo importante no es acordarse de todo…</h2><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto14.jpg"><h2 class="vio">sino tener testigos. 😂</h2><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto15.jpg"><p>Pero bueno…</p><button onclick="next()">UNA MÁS →</button></section>
+<section class="slide"><img class="photo" src="foto16.jpg"><h2>Suficiente archivo histórico.</h2><button onclick="next()">SEGUÍ →</button></section>
+<section class="slide"><img class="photo" src="foto17.jpg"><h1 class="gold">ES HORA DE<br>GENERAR NUEVA EVIDENCIA. 😈🔥</h1><button id="partyBtn" onclick="goParty()">DESCUBRÍ EL PLAN →</button><p id="waitMsg" style="display:none;font-size:15px;opacity:.75">Preparando el salto… 🔥</p></section>
 
-<section class="slide montage"><img class="photo" src="foto1.jpg"></section>
-<section class="slide montage"><img class="photo" src="foto8.jpg"><h2>Tenemos recuerdos que es mejor que nadie conozca…</h2></section>
-<section class="slide montage"><img class="photo" src="foto14.jpg"></section>
-<section class="slide montage"><img class="photo" src="foto2.jpg"><h2 class="vio">Somos amigos porque, además, sabemos demasiado. 😈</h2></section>
-<section class="slide montage"><img class="photo" src="foto9.jpg"></section>
-<section class="slide montage"><img class="photo" src="foto12.jpg"><p>Años de amistad…</p></section>
-<section class="slide montage"><img class="photo" src="foto3.jpg"><h2>malas decisiones y muy buenas historias.</h2></section>
-<section class="slide montage"><img class="photo" src="foto10.jpg"></section>
-<section class="slide montage"><img class="photo" src="foto4.jpg"><h2>No juzgamos.</h2><p>Archivamos evidencia. 😂</p></section>
-<section class="slide montage"><img class="photo" src="foto15.jpg"></section>
-<section class="slide montage"><img class="photo" src="foto5.jpg"></section>
-<section class="slide montage"><img class="photo" src="foto11.jpg"><p>Y después de tantos años…</p></section>
-<section class="slide montage"><img class="photo" src="foto6.jpg"></section>
-<section class="slide montage"><img class="photo" src="foto16.jpg"><h2>seguimos acumulando pruebas.</h2></section>
-<section class="slide montage"><img class="photo" src="foto7.jpg"></section>
-<section class="slide montage"><img class="photo" src="foto13.jpg"></section>
-<section class="slide montage"><img class="photo" src="foto17.jpg"></section>
+<section class="slide" id="party"><div class="final"><div class="kicker">11 · 12 · 2026</div><h1>🔥 LA FIESTA<br><span class="gold">DE LA X</span> 🔥</h1><h2>Y sí…<br><span class="vio">vos venís.</span> 😈</h2><p>Porque algunas historias merecen una segunda temporada.</p></div><button onclick="next()">SIGUIENTE →</button></section>
 
-<section class="slide" id="evidence">
-  <p>Bueno…</p>
-  <h2>Suficiente archivo histórico.</h2>
-  <h1 class="gold flash">ES HORA DE<br>GENERAR NUEVA EVIDENCIA. 😈🔥</h1>
-</section>
-
-<section class="slide" id="party">
-  <div class="final">
-    <div class="kicker">11 · 12 · 2026</div>
-    <h1>🔥 LA FIESTA<br><span class="gold">DE LA X</span> 🔥</h1>
-    <h2>Y sí…<br><span class="vio">vos venís.</span> 😈</h2>
-    <p>Porque algunas historias merecen una segunda temporada.</p>
-  </div>
-  <button onclick="showGift()">SIGUIENTE →</button>
-</section>
-
-<section class="slide" id="gift">
-  <div class="final">
-    <div class="kicker">Tu regalo</div>
-    <h1>🎟️ TU ENTRADA</h1>
-    <h2 class="gold">está a salvo.</h2>
-    <p>Ahora solo queda una cosa:</p>
-    <h2 class="vio">generar evidencia nueva. 🤘</h2>
-    <p class="small">Feliz cumple, Isa ❤️</p>
-  </div>
-  <button onclick="restart()">VER DE NUEVO ↺</button>
-</section>
+<section class="slide"><div class="final"><div class="kicker">Tu regalo</div><h1>🎟️ TU ENTRADA</h1><h2 class="gold">está a salvo.</h2><p>Ahora solo queda una cosa:</p><h2 class="vio">generar evidencia nueva. 🤘</h2><p>Feliz cumple, Isa ❤️</p></div><button onclick="restart()">VER DE NUEVO ↺</button></section>
 
 <audio id="music" src="musica-instrumental.mp3" preload="auto"></audio>
-
 <script>
-const slides=[...document.querySelectorAll('.slide')];
-const montage=[...document.querySelectorAll('.montage')];
-const music=document.getElementById('music');
-const progress=document.getElementById('progress');
-let current=0, timers=[];
-
-// 17 photos occupy ~23.2 s. The evidence card appears just before the musical jump;
-// the party reveal is forced at exactly 25 s after tapping start.
-const photoStart = 0.25;
-const evidenceAt = 23.2;
-const partyAt = 25.0;
-const photoWindow = evidenceAt - photoStart;
-const photoStep = photoWindow / montage.length;
-
-function show(el){
-  slides.forEach(x=>x.classList.remove('active'));
-  el.classList.add('active');
-  current=slides.indexOf(el);
-  progress.style.width=((current)/(slides.length-1)*100)+'%';
+const music=document.getElementById("music");
+const s=[...document.querySelectorAll('.slide')];let i=0;
+function show(n){s[i].classList.remove('active');i=n;s[i].classList.add('active');document.getElementById('progress').style.width=(i/(s.length-1)*100)+'%'}
+function next(){
+ if(i<s.length-1){
+   if(i===0){music.currentTime=0;music.play().catch(()=>{});}
+   show(i+1);
+ }
 }
-function later(fn,seconds){
-  const id=setTimeout(fn,seconds*1000); timers.push(id);
+function goParty(){
+ const btn=document.getElementById('partyBtn'), msg=document.getElementById('waitMsg');
+ if(music.currentTime>=25){show(i+1);return;}
+ btn.disabled=true; msg.style.display='block';
+ const wait=Math.max(0,(25-music.currentTime)*1000);
+ setTimeout(()=>{btn.disabled=false;msg.style.display='none';show(i+1)},wait);
 }
-function clearTimers(){timers.forEach(clearTimeout);timers=[];}
-
-function startShow(){
-  clearTimers();
-  music.currentTime=0;
-  music.play().catch(()=>{});
-  montage.forEach((el,idx)=>{
-    later(()=>show(el), photoStart + idx*photoStep);
-  });
-  later(()=>show(document.getElementById('evidence')), evidenceAt);
-  later(()=>show(document.getElementById('party')), partyAt);
-}
-function showGift(){show(document.getElementById('gift'));}
-function restart(){
-  clearTimers();
-  music.pause(); music.currentTime=0;
-  show(document.getElementById('start'));
-}
-</script>
-</body>
-</html>
+function restart(){music.pause();music.currentTime=0;show(0)}
+</script></body></html>
